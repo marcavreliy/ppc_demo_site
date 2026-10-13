@@ -1,111 +1,76 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт для теста трекинга</title>
-<!-- Google Tag Manager: замени GTM-XXXXXXX на свой ID -->
-<script>
-window.dataLayer = window.dataLayer || [];
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?
-id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,
-'script'
-,
-'dataLayer'
-,
-'GTM-KC5GTS9G');
-</script>
-<!-- End Google Tag Manager -->
-<style>
-body { font-family: Arial, sans-serif; max-width: 640px; margin: 40px
-auto; padding: 0 16px; }
-button, input, textarea { font-size: 16px; padding: 10px; margin: 6px 0;
-width: 100%; box-sizing: border-box; }
-button { cursor: pointer; }
-a.btn { display: inline-block; margin: 6px 8px 6px 0; padding: 10px 14px;
-background: #eee; text-decoration: none; color: #000; border-radius: 6px; }
-#thanks { display: none; color: green; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Демо-сайт для теста трекинга</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KC5GTS9G');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; }
+    button, input, textarea { font-size: 16px; padding: 10px; margin: 6px 0; width: 100%; box-sizing: border-box; }
+    button { cursor: pointer; }
+    a.btn { display: inline-block; margin: 6px 8px 6px 0; padding: 10px 14px; background: #eee; text-decoration: none; color: #000; border-radius: 6px; }
+    #thanks, #buy-msg { display: none; color: green; }
+  </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-
-KC5GTS9G"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC5GTS9G" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <h1>Демо-услуга: консультация</h1>
-<p>Тестовая страница для отработки трекинга конверсий.</p>
-<h2>Связаться</h2>
-<a class="btn" href="tel:+380000000000">Позвонить</a>
-<a class="btn" href="https://wa.me/380000000000" target="
-_
-rel="noopener">WhatsApp</a>
-blank"
-<h2>Оставить заявку</h2>
-<form id="lead-form">
-<input type="text" name="name" placeholder="Имя" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Сообщение"></textarea>
-<button type="submit">Отправить</button>
-</form>
-<p id="thanks">Спасибо, заявка отправлена!</p>
-<h2>Демо-покупка</h2>
-<button id="buy-btn" type="button">Купить за 49 USD</button>
-<script>
-// Заявка: событие generate
-lead
-_
-document.getElementById('lead-form').addEventListener('submit'
-, function
-(e) {
-e.preventDefault();
-window.dataLayer.push({
-event: 'generate
-lead'
-_
-form
-name: 'contact
-,
-form'
-_
-_
-});
-});
-this.style.display = 'none';
-document.getElementById('thanks').style.display = 'block';
-// Имитация покупки: событие purchase с данными заказа
-document.getElementById('buy-btn').addEventListener('click'
-, function ()
-{
-window.dataLayer.push({ ecommerce: null });
-window.dataLayer.push({
-event: 'purchase'
-,
-ecommerce: {
-transaction
-id: 'T-
-' + Date.now(),
-_
-value: 49.00,
-  currency: 'USD'
-items: [{ item
-_
-49.00, quantity: 1 }]
-}
-,
-id: 'demo-1'
-, item
-_
-name: 'Demo product'
-, price:
-});
-});
-</script>
+  <p>Тестовая страница для отработки трекинга конверсий.</p>
+
+  <h2>Связаться</h2>
+  <a class="btn" href="tel:+380000000000">Позвонить</a>
+  <a class="btn" href="https://wa.me/380000000000" target="_blank" rel="noopener">WhatsApp</a>
+
+  <h2>Оставить заявку</h2>
+  <form id="lead-form">
+    <input type="text" name="name" placeholder="Имя" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Сообщение"></textarea>
+    <button type="submit">Отправить</button>
+  </form>
+  <p id="thanks">Спасибо, заявка отправлена!</p>
+
+  <h2>Демо-покупка</h2>
+  <button id="buy-btn" type="button">Купить за 49 USD</button>
+  <p id="buy-msg">Тестовая покупка зафиксирована</p>
+
+  <script>
+    // Заявка: событие generate_lead
+    document.getElementById('lead-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.dataLayer.push({
+        event: 'generate_lead',
+        form_name: 'contact_form'
+      });
+      this.style.display = 'none';
+      document.getElementById('thanks').style.display = 'block';
+    });
+
+    // Имитация покупки: событие purchase с данными заказа
+    document.getElementById('buy-btn').addEventListener('click', function () {
+      window.dataLayer.push({ ecommerce: null });
+      window.dataLayer.push({
+        event: 'purchase',
+        ecommerce: {
+          transaction_id: 'T-' + Date.now(),
+          value: 49.00,
+          currency: 'USD',
+          items: [{ item_id: 'demo-1', item_name: 'Demo product', price: 49.00, quantity: 1 }]
+        }
+      });
+      document.getElementById('buy-msg').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
-alert('Тестовая покупка зафиксирована');
